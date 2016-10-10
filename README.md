@@ -10,28 +10,11 @@ Features:
  * infinite scrolling
  * support for all modern browsers and IE >= 9
 
-RowGrid.js is also available as jQuery plugin: https://github.com/brunjo/rowGrid.js
-
-[![Example Grid](http://brunjo.github.io/rowGrid.js/example.png)][2]
-
-Do you like this project? Follow me on Twitter [@3runjo][1].
 
 ## How does it work?
 All items must have the **same height** but the **width can be variable**. RowGrid.js justifies the items in straight rows so that the width of the rows equals the width of the container/parent element.
 At first rowGrid.js adjusts the margin between the items. If this is not enough rowGrid.js scales down the items.
 
-## Demos & Examples
-Real world example: https://www.pexels.com/
-
-## Installation
-Just include row-grid.js:
-```HTML
-<script src="path/to/row-grid.min.js"></script>
-```
-
-You can install it also with Bower or npm:
-* Install with [Bower](http://bower.io): `bower install rowGrid`.
-* Install with [npm](https://www.npmjs.com): `npm install rowgrid`.
 
 ## Usage
 It is important that you either **declare the width and height as attributes** on the img tag or that you wait until the images are loaded before you start rowGrid.js.
@@ -51,16 +34,16 @@ HTML:
 JS:
 ```JS
 var container = document.getElementsByClassName('container')[0];
-rowGrid(container, {itemSelector: ".item", minMargin: 10, maxMargin: 25, firstItemClass: "first-item", lastRowClass: 'last-row', resize: true});
+rowGrid.init(container, {itemSelector: ".item", minMargin: 10, maxMargin: 25, firstItemClass: "first-item", lastRowClass: 'last-row', resize: true});
 ```
 
 ### Relayout
-You can relayout the complete grid with `rowGrid(container);`. If you appended items to the grid you can call `rowGrid(container, 'appended');` to arrange just the new items in the grid. This is useful if you want to implement endless scrolling.
+You can relayout the complete grid with `rowGrid.layout();`. If you appended items to the grid you can call `rowGrid.append();` to arrange just the new items in the grid. This is useful if you want to implement endless scrolling.
 
 
 ## Parameters
 
-The method `rowGrid()` expects two parameters. The first one has to be a DOM element and the second one a JavaScript object with options:
+The method `rowGrid.init()` expects two parameters. The first one has to be a DOM element and the second one a JavaScript object with options:
 
 #### itemSelector (required)
 * **value:** ```string``` (CSS Selector)
@@ -84,6 +67,11 @@ If ```resize``` is set to true the layout updates on resize events. This is usef
 * **value:** ```number```
 * **default value:** ```0```
 
+#### mode
+* **value:** ```string``` (CSS Selector)
+
+The grid has two mode either ```grid``` the default or ```list``` mode that allow only one image by row. 
+
 RowGrid.js only applies its grid system if the width of the window is greater than or equals to the specified value.
 
 The default value is `0`. This means the items always get arranged by rowGrid.js.
@@ -101,7 +89,3 @@ The first item in the last row gets this class.
 * **default value:** ```undefined```
 
 The first item in every row gets this class.
-
-
-  [1]: https://twitter.com/3runjo "@3runjo"
-  [2]: http://brunjo.github.io/rowGrid.js/ "Demos"

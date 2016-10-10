@@ -16,11 +16,11 @@
     "layout",
     "images"
   ],
-  "author": "Bruno Joseph <bruno.joseph95@gmail.com> (http://www.brunojoseph.com/)",
+  "author": "Rwpixel <rawpixel.vincent@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brunjo/rowGrid/issues"
+    "url": "https://github.com/rawpixel-vincent/rowGrid/issues"
   },
-  "homepage": "https://github.com/brunjo/rowGrid",
+  "homepage": "https://github.com/rawpixel-vincent/rowGrid",
   "dependencies" : {}
 }
